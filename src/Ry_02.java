@@ -1,10 +1,11 @@
+import java.util.ArrayList;
 import java.util.Vector;
 
 class Shape {
     int a = 2, b = 3, c = 4, d = 5;
     @Override
     public String toString() {
-        return "Shape" + a + " " + b + " " + c + " " + d;
+        return "Shape" + " " + a + " " + b + " " + c + " " + d;
     }
 }
 
@@ -12,7 +13,7 @@ class Ball {
     int a = 2, b = 3, c = 4, d = 5;
     @Override
     public String toString() {
-        return "Ball" + a + " " + b + " " + c + " " + d;
+        return "Ball" + " " + a + " " + b + " " + c + " " + d;
     }
 }
 
@@ -20,7 +21,7 @@ class Book {
     int a = 2, b = 3, c = 4, d = 5;
     @Override
     public String toString() {
-        return "Book" + a + " " + b + " " + c + " " + d;
+        return "Book" + " " + a + " " + b + " " + c + " " + d;
     }
 }
 
@@ -53,17 +54,18 @@ class Dog {
         return name;
     }
 
-    public static class Ry_02{
-        static Vector<Dog> arrDog = new Vector<>();
-        static void addDog(String name, int age){
-            arrDog.add(new Dog(name, age));
-        }
-        public static void main(String[] arg){
-            Shape shape = new Shape();
-            System.out.println(shape);
-            addDog("Cnuckles", 4);
-            System.out.println(arrDog.firstElement());
-            System.out.println(arrDog.firstElement().toHumanAge());
-        }
+}
+
+public class Ry_02{
+    static ArrayList<Dog> arrDog = new ArrayList<>();
+    static void addDog(String name, int age){
+        arrDog.add(new Dog(name, age));
+    }
+    public static void main(String[] arg){
+        Shape shape = new Shape();
+        System.out.println(shape);
+        addDog("Cnuckles", 4);
+        System.out.println(arrDog.get(0));
+        System.out.println(arrDog.get(0).toHumanAge());
     }
 }
